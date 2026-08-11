@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+*.session
+*.session-journal
+downloads/
+peko.log
+.venv/
+venv/
+.DS_Store

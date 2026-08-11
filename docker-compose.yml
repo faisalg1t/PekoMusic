@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  peko-music:
+    build: .
+    container_name: peko-music
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+    ports:
+      - "8080:8080"
+
+  mongo:
+    image: mongo:7
+    container_name: peko-mongo
+    restart: unless-stopped
+    volumes:
+      - peko_mongo_data:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  peko_mongo_data:
