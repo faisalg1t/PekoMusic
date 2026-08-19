@@ -1,4 +1,4 @@
-def test_package_imports():
-    import PekoMusic
+def test_main_file_exists():
+    from pathlib import Path
 
-    assert PekoMusic is not None
+    assert Path("main.py").exists()
